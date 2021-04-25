@@ -1,7 +1,9 @@
 /* set styling for page */
+html {
+  font-family: "Roboto Condensed", sans-serif;
+}
 * {
   font-size: 62.5%;
-  font-family: "Roboto Condensed", sans-serif;
 }
 /* create Styling for header */
 .header {
@@ -23,10 +25,36 @@
   flex-direction: column;
   align-items: center;
 }
+.test-questions {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.answer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
 h1 {
   font-size: 3rem;
   padding: 1rem;
 }
+h2 {
+  font-size: 2rem;
+  font-weight: bolder;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+input {
+  border: 0.5rem;
+}
+
 p {
   padding: 1rem;
   font-size: 1rem;
@@ -36,6 +64,8 @@ button {
   background: burlywood;
   border-radius: 5px;
   font-weight: bolder;
+  margin-top: 1rem;
+  width: 10%;
 }
 
 /* creat styling for question text */

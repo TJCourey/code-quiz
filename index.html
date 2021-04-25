@@ -26,13 +26,32 @@
         Luck!
       </p>
       <!-- add initialize button -->
-      <button id="startButton">Let's Start!</button>
+      <button id="startButton1">Let's Start!</button>
     </main>
 
     <!-- set divs to display questions and answers -->
-    <section id="questionSec">
+    <section class="test-questions" id="questionSec">
       <h2 id="scoreTrack"></h2>
-      <h3 id="question"></h3>
+      <h3 id="question">Question</h3>
+      <form class="answer-form" id="answers" action="./assets/script.js">
+        <div>
+          <input id="optionA" type="radio" name="answer" value="a" />
+          <label for="a">A</label><br />
+        </div>
+        <div>
+          <input id="optionB" type="radio" name="answer" value="b" />
+          <label for="b">B</label><br />
+        </div>
+        <div>
+          <input id="optionC" type="radio" name="answer" value="c" />
+          <label for="c">C</label><br />
+        </div>
+        <div>
+          <input id="optionD" type="radio" name="answer" value="d" />
+          <label for="d">D</label><br />
+        </div>
+      </form>
+      <button id="subAns">Submit</button>
       <p id="feedback"></p>
     </section>
     <script src="./assets/script.js"></script>
