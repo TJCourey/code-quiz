@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="./assets/reset.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header" id="scorecard">
+      <h2>Code Quiz</h2>
+      <h2>Time Left:<span id="timeText">90</span></h2>
+    </header>
+    <!-- add welcome text -->
+    <main class="main">
+      <h1>Welcome to the Web Development Code Quiz</h1>
+      <p>
+        You will have 90 seconds to answer as many questions as possible. Good
+        Luck!
+      </p>
+      <!-- add initialize button -->
+      <button id="startButton">Let's Start!</button>
+    </main>
+
+    <!-- set divs to display questions and answers -->
+    <section id="questionSec">
+      <h3 id="question"></h3>
+      <p id="answers"></p>
+    </section>
+  </body>
+</html>
