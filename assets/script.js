@@ -14,7 +14,8 @@ var ansA = document.getElementById("optionA");
 var ansB = document.getElementById("optionB");
 var ansC = document.getElementById("optionC");
 var ansD = document.getElementById("optionD");
-console.log(startButtonEl);
+var endScoreEl = document.getElementById("endScore");
+// console.log(startButtonEl);
 
 // link test initialization button
 
@@ -112,7 +113,7 @@ function questionPrompt() {
   //   console.log(questionArr[i].answers[3]);
 }
 subAnsEl.addEventListener("click", function () {
-  //   questionArr.answerCheck();
+  questionArr[i].answerCheck();
   i++;
   if (i > questionArr.length - 1) {
     finalScore();
@@ -125,8 +126,9 @@ subAnsEl.addEventListener("click", function () {
 scoreTrackEl.textContent = "You're current score is " + score;
 
 // create final score card
+// create input to track score
 function finalScore() {
-  scoreTrackEl.textContent = "You're final score is " + score;
+  document.getElementById("finalScore").setAttribute("style", "display:block;");
+  endScoreEl.textContent = "You're final score is " + score;
   testDis.setAttribute("style", "display:none;");
 }
-// create input to track score

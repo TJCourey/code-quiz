@@ -35,6 +35,9 @@ html {
   flex-direction: column;
   align-items: left;
 }
+.final-score {
+  display: none;
+}
 
 h1 {
   font-size: 3rem;
