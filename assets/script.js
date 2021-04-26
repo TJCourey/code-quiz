@@ -88,8 +88,8 @@ var questionArr = [
       "Decidedly Obtuse Model",
       "Drink Only Margaritas",
     ],
+    // provide feedback for correct and incorrect answers
     answerCheck: function () {
-      // provide feedback for correct and incorrect answers
       if (subAnsEl == "b") {
         score++;
         rightWrong.textContent = "Correct!";
@@ -109,9 +109,10 @@ function questionPrompt() {
   ansB.innerHTML = questionArr[i].answers[1];
   ansC.innerHTML = questionArr[i].answers[2];
   ansD.innerHTML = questionArr[i].answers[3];
-  console.log(questionArr[i].answers[1]);
+  //   console.log(questionArr[i].answers[3]);
 }
 subAnsEl.addEventListener("click", function () {
+  //   questionArr.answerCheck();
   i++;
   if (i > questionArr.length - 1) {
     finalScore();
@@ -126,5 +127,6 @@ scoreTrackEl.textContent = "You're current score is " + score;
 // create final score card
 function finalScore() {
   scoreTrackEl.textContent = "You're final score is " + score;
+  testDis.setAttribute("style", "display:none;");
 }
 // create input to track score
