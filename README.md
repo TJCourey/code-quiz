@@ -5,7 +5,10 @@ For this project Icreated a short but effective code quiz on JavaScript. I found
 Usage
 To take this code quiz simply visit https://tjcourey.github.io/code-quiz/
 
-Here is a screenshot of the page on loading in my local browser 
+Here is a screenshot of the page on loading in my local browser:
+
+![code-quiz-proj](https://user-images.githubusercontent.com/30154584/116319500-d9acf300-a773-11eb-89e6-42b8930d0f29.png)
+
 
 Credits
 People who helped with code and sanity:
