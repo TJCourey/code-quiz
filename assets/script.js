@@ -14,7 +14,10 @@ var ansA = document.getElementById("optionA");
 var ansB = document.getElementById("optionB");
 var ansC = document.getElementById("optionC");
 var ansD = document.getElementById("optionD");
+var answerEl = document.getElementsByClassName("answer");
 var endScoreEl = document.getElementById("endScore");
+var finalAns = "";
+var q = 0;
 // console.log(startButtonEl);
 
 // link test initialization button
@@ -38,12 +41,28 @@ function timer() {
     }
   }, 1000);
 }
-// create prompts for questions
 
+// create prompts for questions
 function runTest() {
   startDis.setAttribute("style", "display:none;");
   testDis.setAttribute("style", "display:block;");
 }
+
+var clickCheck = function () {
+  finalAns = this.getAttribute("value");
+  questionArr[q].answerCheck();
+  q++;
+  if (q > questionArr.length - 1) {
+    finalScore();
+  } else {
+    questionPrompt();
+  }
+};
+
+for (var i = 0; i < answerEl.length; i++) {
+  answerEl[i].addEventListener("click", clickCheck);
+}
+console.log(answerEl.length);
 // creat objects for questions and answers
 var questionArr = [
   {
@@ -51,7 +70,7 @@ var questionArr = [
     answers: ["()", "//", "{}", "[]"],
     answerCheck: function () {
       // provide feedback for correct and incorrect answers
-      if (subAnsEl == "a") {
+      if (finalAns == "a") {
         score++;
         rightWrong.textContent = "Correct!";
       } else {
@@ -71,7 +90,7 @@ var questionArr = [
     ],
     answerCheck: function () {
       // provide feedback for correct and incorrect answers
-      if (subAnsEl == "c") {
+      if (finalAns == "c") {
         score++;
         rightWrong.textContent = "Correct!";
       } else {
@@ -91,7 +110,7 @@ var questionArr = [
     ],
     // provide feedback for correct and incorrect answers
     answerCheck: function () {
-      if (subAnsEl == "b") {
+      if (finalAns == "b") {
         score++;
         rightWrong.textContent = "Correct!";
       } else {
@@ -103,27 +122,28 @@ var questionArr = [
   },
 ];
 // create waay to display questions
-var i = 0;
 function questionPrompt() {
-  questionDis.innerHTML = questionArr[i].question;
-  ansA.innerHTML = questionArr[i].answers[0];
-  ansB.innerHTML = questionArr[i].answers[1];
-  ansC.innerHTML = questionArr[i].answers[2];
-  ansD.innerHTML = questionArr[i].answers[3];
-  //   console.log(questionArr[i].answers[3]);
+  questionDis.innerHTML = questionArr[q].question;
+  ansA.innerHTML = questionArr[q].answers[0];
+  ansB.innerHTML = questionArr[q].answers[1];
+  ansC.innerHTML = questionArr[q].answers[2];
+  ansD.innerHTML = questionArr[q].answers[3];
+  // create score tracker
+  scoreTrackEl.textContent = "You're current score is " + score;
 }
-subAnsEl.addEventListener("click", function () {
-  questionArr[i].answerCheck();
-  i++;
-  if (i > questionArr.length - 1) {
-    finalScore();
-  } else {
-    questionPrompt();
-  }
-});
 
-// create score tracker
-scoreTrackEl.textContent = "You're current score is " + score;
+// console.log(answerEl);
+// answerEl.addEventListener("click", function () {
+// answerEl = document.getElementById("answer").value;
+//   console.log(answerEl);
+//   questionArr[q].answerCheck();
+//   q++;
+//   if (q > questionArr.length - 1) {
+//     finalScore();
+//   } else {
+//     questionPrompt();
+//   }
+// });
 
 // create final score card
 // create input to track score

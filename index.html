@@ -33,25 +33,32 @@
     <section class="test-questions" id="questionSec">
       <h2 id="scoreTrack"></h2>
       <h3 id="question">Question</h3>
-      <form class="answer-form" id="answers" action="./assets/script.js">
+      <button id="optionA" class="answer" value="a"></button>
+      <button id="optionB" class="answer" value="b"></button>
+      <button id="optionC" class="answer" value="c"></button>
+      <button id="optionD" class="answer" value="d"></button>
+      <!-- <form class="answer-form" id="answers" action="./assets/script.js">
         <div>
-          <input type="radio" name="answer" value="a" />
+          <input type="radio" class="answer" value="a" />
           <label id="optionA" for="a">A</label><br />
         </div>
         <div>
-          <input type="radio" name="answer" value="b" />
+          <input type="radio" class="answer" value="b" />
           <label id="optionB" for="b">B</label><br />
         </div>
         <div>
-          <input type="radio" name="answer" value="c" />
+          <input type="radio" class="answer" value="c" />
           <label id="optionC" for="c">C</label><br />
         </div>
         <div>
-          <input type="radio" name="answer" value="d" />
+          <input type="radio" class="answer" value="d" />
           <label id="optionD" for="d">D</label><br />
         </div>
-      </form>
-      <button id="subAns">Submit</button>
+        <div>
+          <button id="subAns">Submit</button>
+        </div>
+      </form> -->
+
       <p id="feedback"></p>
     </section>
     <section id="finalScore" class="final-score">
@@ -59,7 +66,7 @@
       <p>Add your score to the high scores list!</p>
       <form action="./assets/script.js"></form>
       <label for="initials">Your initials: </label>
-      <input type="text" id="initials" name="initials" /><br
+      <input type="text" id="initials" name="initials" />
       <button>Submit</button>
     </section>
     <script src="./assets/script.js"></script>
