@@ -16,6 +16,7 @@
   <body>
     <header class="header" id="scorecard">
       <h2>Code Quiz</h2>
+      <h3 id="prevScore">00</h3>
       <h2>Time Left:<span id="timeText"></span></h2>
     </header>
     <!-- add welcome text -->
@@ -37,28 +38,6 @@
       <button id="optionB" class="answer" value="b"></button>
       <button id="optionC" class="answer" value="c"></button>
       <button id="optionD" class="answer" value="d"></button>
-      <!-- <form class="answer-form" id="answers" action="./assets/script.js">
-        <div>
-          <input type="radio" class="answer" value="a" />
-          <label id="optionA" for="a">A</label><br />
-        </div>
-        <div>
-          <input type="radio" class="answer" value="b" />
-          <label id="optionB" for="b">B</label><br />
-        </div>
-        <div>
-          <input type="radio" class="answer" value="c" />
-          <label id="optionC" for="c">C</label><br />
-        </div>
-        <div>
-          <input type="radio" class="answer" value="d" />
-          <label id="optionD" for="d">D</label><br />
-        </div>
-        <div>
-          <button id="subAns">Submit</button>
-        </div>
-      </form> -->
-
       <p id="feedback"></p>
     </section>
     <section id="finalScore" class="final-score">
@@ -67,7 +46,8 @@
       <form action="./assets/script.js"></form>
       <label for="initials">Your initials: </label>
       <input type="text" id="initials" name="initials" />
-      <button>Submit</button>
+      <button id="highButton">Submit</button>
+      <ul id="high-score"></ul>
     </section>
     <script src="./assets/script.js"></script>
   </body>

@@ -18,8 +18,15 @@ var answerEl = document.getElementsByClassName("answer");
 var endScoreEl = document.getElementById("endScore");
 var finalAns = "";
 var q = 0;
+var preScoreDis = document.getElementById("prevScore");
+var initialEl = document.getElementById("initials");
+var highScore = document.getElementById("highButton");
+var highScoreDis = document.getElementById("high-score");
+var prevScore = document.getElementById("prevScore");
+var beforeScore = "";
 // console.log(startButtonEl);
 
+displayScore();
 // link test initialization button
 
 startButtonEl.addEventListener("click", function () {
@@ -36,6 +43,10 @@ function timer() {
     timeLeft.textContent = secondsLeft;
 
     if (secondsLeft === 0) {
+      clearInterval(timerCount);
+      finalScore();
+    }
+    if (questionArr.length > questionArr[q]) {
       clearInterval(timerCount);
       finalScore();
     }
@@ -62,7 +73,7 @@ var clickCheck = function () {
 for (var i = 0; i < answerEl.length; i++) {
   answerEl[i].addEventListener("click", clickCheck);
 }
-console.log(answerEl.length);
+// console.log(answerEl.length);
 // creat objects for questions and answers
 var questionArr = [
   {
@@ -132,23 +143,33 @@ function questionPrompt() {
   scoreTrackEl.textContent = "You're current score is " + score;
 }
 
-// console.log(answerEl);
-// answerEl.addEventListener("click", function () {
-// answerEl = document.getElementById("answer").value;
-//   console.log(answerEl);
-//   questionArr[q].answerCheck();
-//   q++;
-//   if (q > questionArr.length - 1) {
-//     finalScore();
-//   } else {
-//     questionPrompt();
-//   }
-// });
-
 // create final score card
+function saveScore() {
+  var scoreSub = {
+    initial: initialEl.value,
+    score: score,
+  };
+  localStorage.setItem("prevScore", JSON.stringify(scoreSub));
+}
+
+function displayScore() {
+  beforeScore = JSON.parse(localStorage.getItem("prevScore"));
+  prevScore.innerHTML =
+    "Previous score was " + beforeScore.score + " by " + beforeScore.initial;
+  // highScoreDis.innerHTML = JSON.parse(localStorage.getItem("scoreSub"));
+  console.log(beforeScore);
+}
+
 // create input to track score
 function finalScore() {
   document.getElementById("finalScore").setAttribute("style", "display:block;");
   endScoreEl.textContent = "You're final score is " + score;
   testDis.setAttribute("style", "display:none;");
+  // create previous score tracker
 }
+document
+  .getElementById("highButton")
+  .addEventListener("click", function (event) {
+    event.preventDefault;
+    saveScore();
+  });
