@@ -26,7 +26,7 @@ var prevScore = document.getElementById("prevScore");
 var beforeScore = "";
 // console.log(startButtonEl);
 
-displayScore();
+// displayScore();
 // link test initialization button
 
 startButtonEl.addEventListener("click", function () {
@@ -154,9 +154,12 @@ function saveScore() {
 
 function displayScore() {
   beforeScore = JSON.parse(localStorage.getItem("prevScore"));
-  prevScore.innerHTML =
-    "Previous score was " + beforeScore.score + " by " + beforeScore.initial;
-  // highScoreDis.innerHTML = JSON.parse(localStorage.getItem("scoreSub"));
+  if (beforeScore == "") {
+    prevScore.innerHTML = "No Score to show";
+  } else {
+    prevScore.innerHTML =
+      "Previous score was " + beforeScore.score + " by " + beforeScore.initial;
+  }
   console.log(beforeScore);
 }
 
